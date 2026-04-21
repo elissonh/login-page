@@ -639,7 +639,7 @@ If it declares any Font Awesome CSS pseudo-elements, they will not be rendered a
   }
 `,Uc=qn.span`
   color: #f94a4a;
-`,Wc=`https://login-page-production-6743.up.railway.app/`;async function Gc(e,t){try{let n=await fetch(`${Wc}/api/auth/login`,{method:`POST`,headers:{"Content-Type":`application/json`},body:JSON.stringify({email:e,password:t})}),r=await n.json();return n.ok?(localStorage.setItem(`username`,r.username),{success:!0}):{success:!1,error:r.message}}catch{return{success:!1,error:`Could not connect to the server. Try again later.`}}return!1}async function Kc(e,t,n){try{let r=await fetch(`${Wc}/api/auth/register`,{method:`POST`,headers:{"Content-Type":`application/json`},body:JSON.stringify({username:t,email:e,password:n})}),i=await r.json();return r.ok?(alert(`Account created.`),{success:!0}):{success:!1,error:i.message.split(`;`).join(`
+`,Wc=`https://login-page-production-6743.up.railway.app`;async function Gc(e,t){try{let n=await fetch(`${Wc}/api/auth/login`,{method:`POST`,headers:{"Content-Type":`application/json`},body:JSON.stringify({email:e,password:t})}),r=await n.json();return n.ok?(localStorage.setItem(`username`,r.username),{success:!0}):{success:!1,error:r.message}}catch{return{success:!1,error:`Could not connect to the server. Try again later.`}}return!1}async function Kc(e,t,n){try{let r=await fetch(`${Wc}/api/auth/register`,{method:`POST`,headers:{"Content-Type":`application/json`},body:JSON.stringify({username:t,email:e,password:n})}),i=await r.json();return r.ok?(alert(`Account created.`),{success:!0}):{success:!1,error:i.message.split(`;`).join(`
 `)}}catch{return{success:!1,error:`Could not connect to the server. Try again later.`}}}var qc=qn.span`
   color: red;
   font-size: .75rem;
