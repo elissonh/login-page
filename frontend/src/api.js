@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "https://login-page-production-6743.up.railway.app/";
 
 export async function login(email, password) {
   try {
