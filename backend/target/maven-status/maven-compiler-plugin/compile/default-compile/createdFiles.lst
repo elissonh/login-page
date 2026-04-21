@@ -1,0 +1,15 @@
+com\loginapp\dto\AuthDTOs$ErrorResponse.class
+com\loginapp\service\AuthService.class
+com\loginapp\controller\AuthController.class
+com\loginapp\repository\UserRepository.class
+com\loginapp\dto\AuthDTOs$AuthRequest.class
+com\loginapp\exception\AuthExceptions$UserAlreadyExistsException.class
+com\loginapp\dto\AuthDTOs.class
+com\loginapp\exception\AuthExceptions$InvalidCredentialsException.class
+com\loginapp\dto\AuthDTOs$AuthResponse.class
+com\loginapp\exception\AuthExceptions.class
+com\loginapp\exception\GlobalExceptionHandler.class
+com\loginapp\LoginAppApplication.class
+com\loginapp\dto\AuthDTOs$RegisterRequest.class
+com\loginapp\config\SecurityConfig.class
+com\loginapp\model\User.class

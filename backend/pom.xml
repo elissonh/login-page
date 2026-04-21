@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+        PARENT: This inherits default configs from Spring Boot.
+        Think of it as a "template" that pre-configures versions
+        of hundreds of libraries so you don't have to manage them manually.
+    -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.0</version>
+        <relativePath/>
+    </parent>
+
+    <!--
+        PROJECT IDENTITY:
+        - groupId:    like a namespace, usually your domain reversed (com.yourname)
+        - artifactId: the project name
+        - version:    your app version (SNAPSHOT means "in development")
+    -->
+    <groupId>com.loginapp</groupId>
+    <artifactId>login-app-backend</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>login-app-backend</name>
+    <description>Simple Login App Backend</description>
+
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+
+    <dependencies>
+
+        <!--
+            SPRING WEB: Gives you everything to build REST APIs.
+            Includes an embedded Tomcat server — you don't need to install
+            a separate server, just run the .jar and you're live.
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--
+            SPRING DATA JPA: Lets you talk to the database using Java objects
+            instead of raw SQL. You define a "User" class and JPA handles
+            the INSERT/SELECT/UPDATE queries automatically.
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <!--
+            SPRING SECURITY: We're using this specifically for BCryptPasswordEncoder.
+            BCrypt is the industry standard for hashing passwords — it's slow by design,
+            making brute-force attacks extremely costly.
+            We are NOT using Spring Security's full auth filter chain here.
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!--
+            H2 DATABASE: An in-memory database that lives only while the app runs.
+            Perfect for development — zero setup, auto-resets on restart.
+            It also ships a browser UI at /h2-console so you can inspect data.
+            "runtime" scope means it's only needed when the app actually runs,
+            not during compilation.
+        -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!--
+            VALIDATION: Enables annotations like @NotBlank, @Size on your
+            request DTOs to validate incoming data without writing if/else manually.
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <!-- TESTING: JUnit + Spring test utilities. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!--
+                This plugin packages your app into a single executable .jar
+                that includes everything (your code + all dependencies + Tomcat).
+                Run it with: java -jar login-app-backend-0.0.1-SNAPSHOT.jar
+            -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
